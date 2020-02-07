@@ -197,6 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6309993929777697627}
+  - component: {fileID: 7490165693910185805}
   m_Layer: 0
   m_Name: planeCube
   m_TagString: Untagged
@@ -213,7 +214,7 @@ Transform:
   m_GameObject: {fileID: 2000436864228698980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3152448254918896098}
   - {fileID: 3240808491494458431}
@@ -224,6 +225,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7490165693910185805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000436864228698980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da5ce003d18603f4a890ca2ba9371c56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2911392641065008406
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +390,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c5dec85c917141e43b8db5fc953c0d7a, type: 2}
+  - {fileID: 2100000, guid: 2a03ee92333295846b433d9ce8e0c300, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
