@@ -296,6 +296,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &973469814 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2000436864228698980, guid: 9c225ed5c252a9f44817d86fb8b627f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 4399271236931745172}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &973469815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973469814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da5ce003d18603f4a890ca2ba9371c56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridSize: 10
 --- !u!1001 &4399271236931745172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307,6 +326,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: planeCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974074290653165748, guid: 9c225ed5c252a9f44817d86fb8b627f4,
+        type: 3}
+      propertyPath: m_Text
+      value: 0,0
       objectReference: {fileID: 0}
     - target: {fileID: 6309993929777697627, guid: 9c225ed5c252a9f44817d86fb8b627f4,
         type: 3}
@@ -363,10 +387,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7490165693910185805, guid: 9c225ed5c252a9f44817d86fb8b627f4,
-        type: 3}
-      propertyPath: gridSize
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7490165693910185805, guid: 9c225ed5c252a9f44817d86fb8b627f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9c225ed5c252a9f44817d86fb8b627f4, type: 3}
