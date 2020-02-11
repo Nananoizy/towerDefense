@@ -13,16 +13,19 @@ public class cubeEditor : MonoBehaviour
     void Start(){
         
         textMesh = GetComponentInChildren<TextMesh>();
-
+        
     }
 
     void Update()
     {
+
         Vector3 snapPos;
         snapPos.x = Mathf.RoundToInt(transform.position.x/10f) * gridSize;
         snapPos.z = Mathf.RoundToInt(transform.position.z/10f) * gridSize;
 
-        textMesh.text = snapPos.x + "," + snapPos.z;
+        string labelText = snapPos.x/gridSize + "," + snapPos.z/gridSize;
+        textMesh.text = labelText;
+        gameObject.name = labelText;
 
         transform.position = new Vector3(snapPos.x, 0f, snapPos.z);
     }
