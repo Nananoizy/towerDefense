@@ -6,6 +6,12 @@ public class Pathfinder : MonoBehaviour
 {
 
     Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
+    Vector2Int[] directions = {
+        Vector2Int.up,
+        Vector2Int.right,
+        Vector2Int.down,
+        Vector2Int.left
+    };
 
     [SerializeField] Waypoint startPoint, endPoint;
 
@@ -14,6 +20,7 @@ public class Pathfinder : MonoBehaviour
     {
         LoadBlocks();
         ColorStartAndEnd();
+        ExploreNeighbours();
     }
 
     // Update is called once per frame
@@ -46,5 +53,16 @@ public class Pathfinder : MonoBehaviour
         startPoint.SetTopColor(Color.green);
         endPoint.SetTopColor(Color.red);
 
+    }
+
+    void ExploreNeighbours(){
+
+        foreach(Vector2Int direction in directions){
+
+            Vector2Int explorationCoordinates = startPoint.GetGridPos() + direction;
+            //print(explorationCoordinates);
+            grid[explorationCoordinates].SetTopColor(Color.blue);
+
+        }
     }
 }
