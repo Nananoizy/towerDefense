@@ -7,10 +7,13 @@ public class Pathfinder : MonoBehaviour
 
     Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
 
+    [SerializeField] Waypoint startPoint, endPoint;
+
     // Start is called before the first frame update
     void Start()
     {
         LoadBlocks();
+        ColorStartAndEnd();
     }
 
     // Update is called once per frame
@@ -35,6 +38,13 @@ public class Pathfinder : MonoBehaviour
             }
             
         }
+
+    }
+
+    void ColorStartAndEnd(){
+
+        startPoint.SetTopColor(Color.green);
+        endPoint.SetTopColor(Color.red);
 
     }
 }

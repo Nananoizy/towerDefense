@@ -29,4 +29,11 @@ public class Waypoint : MonoBehaviour
             Mathf.RoundToInt(transform.position.z/10f) * gridSize
         );
     }
+
+    public void SetTopColor(Color color){
+
+        MeshRenderer topMeshR =  transform.Find("Top").GetComponent<MeshRenderer>();
+
+        topMeshR.material.color = color;
+    }
 }
