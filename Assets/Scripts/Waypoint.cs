@@ -9,6 +9,8 @@ public class Waypoint : MonoBehaviour
 
     public bool isExplored = false;
 
+    public Waypoint exploredFrom;
+
     Vector2Int gridPos;
     void Start()
     {

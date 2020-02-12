@@ -7,6 +7,7 @@ public class Pathfinder : MonoBehaviour
 
     Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
     Queue<Waypoint> queue = new Queue<Waypoint>();
+    Waypoint searchCenter;
     Vector2Int[] directions = {
         Vector2Int.up,
         Vector2Int.right,
@@ -58,20 +59,24 @@ public class Pathfinder : MonoBehaviour
 
     }
 
-    void ExploreNeighbours(Waypoint from){
+    void ExploreNeighbours(){
 
         if (!isRunning) { return; }
         foreach(Vector2Int direction in directions){
 
-            Vector2Int explorationCoordinates = from.GetGridPos() + direction;
+            Vector2Int explorationCoordinates = searchCenter.GetGridPos() + direction;
             //print(explorationCoordinates);
             try{
 
                 Waypoint neigbour = grid[explorationCoordinates];
                 
-                if (!neigbour.isExplored){
+                if (neigbour.isExplored || queue.Contains(neigbour)){
+                    
+                }
+                else{
                     neigbour.SetTopColor(Color.blue);
                     queue.Enqueue(neigbour);
+                    neigbour.exploredFrom = searchCenter;
                 }
                 
             }
@@ -88,15 +93,14 @@ public class Pathfinder : MonoBehaviour
 
         while(queue.Count > 0 && isRunning){
             
-            Waypoint searchCenter = queue.Dequeue();
+            searchCenter = queue.Dequeue();
             searchCenter.isExplored = true;
-            HaltIfEndFound(searchCenter);
-
-            ExploreNeighbours(searchCenter);
+            HaltIfEndFound();
+            ExploreNeighbours();
         }
     }
 
-    private void HaltIfEndFound(Waypoint searchCenter){
+    private void HaltIfEndFound(){
 
         if (searchCenter == endPoint){
             isRunning = false;
