@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4207998119902613989}
-  - component: {fileID: 1948233832374251136}
-  - component: {fileID: 1246415933609216977}
   m_Layer: 0
   m_Name: EnemyCube
   m_TagString: Untagged
@@ -33,32 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1948233832374251136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2911717351666103390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c472808d82cfc7646874f4d3c832faa0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isExplored: 0
-  exploredFrom: {fileID: 0}
---- !u!114 &1246415933609216977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2911717351666103390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da5ce003d18603f4a890ca2ba9371c56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5164421827750490335
 PrefabInstance:
   m_ObjectHideFlags: 0
