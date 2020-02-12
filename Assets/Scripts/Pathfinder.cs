@@ -17,21 +17,9 @@ public class Pathfinder : MonoBehaviour
 
     [SerializeField] Waypoint startPoint, endPoint;
 
+    private List<Waypoint> path = new List<Waypoint>();
+
     bool isRunning = true;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        LoadBlocks();
-        Pathfind();
-        ColorStartAndEnd();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void LoadBlocks(){
 
@@ -65,8 +53,8 @@ public class Pathfinder : MonoBehaviour
         foreach(Vector2Int direction in directions){
 
             Vector2Int explorationCoordinates = searchCenter.GetGridPos() + direction;
-            //print(explorationCoordinates);
-            try{
+                
+            if(grid.ContainsKey(explorationCoordinates)){
 
                 Waypoint neigbour = grid[explorationCoordinates];
                 
@@ -74,20 +62,16 @@ public class Pathfinder : MonoBehaviour
                     
                 }
                 else{
-                    neigbour.SetTopColor(Color.blue);
                     queue.Enqueue(neigbour);
                     neigbour.exploredFrom = searchCenter;
                 }
                 
             }
-            catch{
-
-            }
 
         }
     }
 
-    void Pathfind(){
+    void BreadthFirstSearch(){
 
         queue.Enqueue(startPoint);
 
@@ -105,5 +89,32 @@ public class Pathfinder : MonoBehaviour
         if (searchCenter == endPoint){
             isRunning = false;
         }
+    }
+
+    private void FormPath(){
+
+        path.Add(endPoint);
+
+        Waypoint previous = endPoint.exploredFrom;
+
+        while(previous != startPoint){
+
+            path.Add(previous);
+
+            previous = previous.exploredFrom;
+
+        }
+
+        path.Add(startPoint);
+        path.Reverse();
+    }
+
+    public List<Waypoint> GetPath(){
+        LoadBlocks();
+        BreadthFirstSearch();
+        ColorStartAndEnd();
+        FormPath();
+
+        return path;
     }
 }

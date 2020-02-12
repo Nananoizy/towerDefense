@@ -6,25 +6,24 @@ public class enemyMovement : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] List<Waypoint> path;
     void Start()
     {
-        StartCoroutine(FollowPath());
+        Pathfinder pathfinder = FindObjectOfType<Pathfinder>();
+
+        var path = pathfinder.GetPath();
+
+        StartCoroutine(FollowPath(path));
     }
 
-    IEnumerator FollowPath(){
+    IEnumerator FollowPath(List<Waypoint> path){
 
         foreach (Waypoint waypoint in path){
 
             transform.position = waypoint.transform.position;
             yield return new WaitForSeconds(1f);
 
-        }
+        } 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
