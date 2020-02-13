@@ -9,7 +9,6 @@ public class Waypoint : MonoBehaviour
 
     public bool isExplored = false;
     public bool isPlaceable = true;
-    [SerializeField] GameObject towerPrefab;
 
     public Waypoint exploredFrom;
 
@@ -50,8 +49,7 @@ public class Waypoint : MonoBehaviour
         if (Input.GetMouseButtonDown(0)){
 
             if (isPlaceable){
-                Instantiate(towerPrefab, transform.position, Quaternion.identity);
-                isPlaceable = false;
+                FindObjectOfType<TowerFactory>().AddTower(this);
             }
         }
         
