@@ -9,6 +9,8 @@ public class Tower : MonoBehaviour
     [SerializeField] float shootingDistance = 30f;
     ParticleSystem bullets;
 
+    public Waypoint baseWaypoint;
+
     Transform targetEnemy;
 
     void Start(){
