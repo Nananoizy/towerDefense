@@ -6,12 +6,10 @@ public class Tower : MonoBehaviour
 {
 
     [SerializeField] Transform objectToPan;
-    [SerializeField] Transform targetEnemy;
     [SerializeField] float shootingDistance = 30f;
-
     ParticleSystem bullets;
 
-    // Update is called once per frame
+    Transform targetEnemy;
 
     void Start(){
         
@@ -20,6 +18,8 @@ public class Tower : MonoBehaviour
     }
     void Update()
     {
+        SetTargetEnemy();
+
         if (targetEnemy){
             objectToPan.LookAt(targetEnemy);
             checkShooting();
@@ -51,4 +51,35 @@ public class Tower : MonoBehaviour
         emmissionModule.enabled = active;
 
     } 
+
+    private void SetTargetEnemy(){
+
+        var sceneEnemies = FindObjectsOfType<Enemy>(); //todos los gameobjects que tengan el script enemy
+
+        if (sceneEnemies.Length == 0){ return; }
+        
+        Transform closestEnemy = sceneEnemies[0].transform;
+
+        foreach (Enemy testenemy in sceneEnemies){
+
+            closestEnemy= GetClosest(closestEnemy, testenemy.transform);
+        }
+
+        targetEnemy = closestEnemy;
+
+    }
+
+    private Transform GetClosest(Transform transformA, Transform transformB){
+
+        var thisToA = Vector3.Distance(transform.position, transformA.position);
+        var thisToB = Vector3.Distance(transform.position, transformB.position);
+
+        if (thisToA > thisToB){
+            return transformB;
+        }
+        else{
+            return transformA;
+        }
+
+    }
 }

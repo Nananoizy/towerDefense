@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyDeathFX: {fileID: 21228331641731477, guid: fd302063a12c6f6488a1c262a531950a,
     type: 3}
-  hits: 3
+  hits: 5
 --- !u!65 &-2527149766610267422
 BoxCollider:
   m_ObjectHideFlags: 0

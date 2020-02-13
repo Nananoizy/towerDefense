@@ -46,8 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 963444404332905215}
-  targetEnemy: {fileID: 0}
-  shootingDistance: 10
+  shootingDistance: 20
 --- !u!1 &7738859250840589304
 GameObject:
   m_ObjectHideFlags: 0

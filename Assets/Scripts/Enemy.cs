@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject enemyDeathFX;
-    [SerializeField] int hits = 3;
+    [SerializeField] int hits = 20;
 
 
 
