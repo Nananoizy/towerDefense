@@ -19,7 +19,6 @@ public class Enemy : MonoBehaviour
 
         if (hits <= 0){
             KillEnemy();
-            Destroy(other);
         }
     }
 
