@@ -8,6 +8,8 @@ public class Waypoint : MonoBehaviour
     const int gridSize = 10;
 
     public bool isExplored = false;
+    public bool isPlaceable = true;
+    [SerializeField] GameObject towerPrefab;
 
     public Waypoint exploredFrom;
 
@@ -44,6 +46,14 @@ public class Waypoint : MonoBehaviour
     }
 
     void OnMouseOver(){
-        print(gameObject.name);
+
+        if (Input.GetMouseButtonDown(0)){
+
+            if (isPlaceable){
+                Instantiate(towerPrefab, transform.position, Quaternion.identity);
+                isPlaceable = false;
+            }
+        }
+        
     }
 }

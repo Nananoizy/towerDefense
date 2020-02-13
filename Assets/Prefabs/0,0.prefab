@@ -60,6 +60,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isExplored: 0
+  isPlaceable: 1
+  towerPrefab: {fileID: 959343504148346748, guid: 0f283c9c7806c394b9b6202ddd19dd03,
+    type: 3}
   exploredFrom: {fileID: 0}
 --- !u!65 &3554279730394461346
 BoxCollider:
@@ -113,7 +116,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4700481855341958425}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

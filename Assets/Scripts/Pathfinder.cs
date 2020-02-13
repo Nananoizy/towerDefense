@@ -94,6 +94,7 @@ public class Pathfinder : MonoBehaviour
     private void FormPath(){
 
         path.Add(endPoint);
+        endPoint.isPlaceable = false;
 
         Waypoint previous = endPoint.exploredFrom;
 
@@ -102,10 +103,12 @@ public class Pathfinder : MonoBehaviour
             path.Add(previous);
 
             previous = previous.exploredFrom;
+            previous.isPlaceable = false;
 
         }
 
         path.Add(startPoint);
+        startPoint.isPlaceable = false;
         path.Reverse();
     }
 
