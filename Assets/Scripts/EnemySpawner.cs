@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] float secondsBetweenSpawns = 1f;
     [SerializeField] GameObject enemyPrefab;
+    [SerializeField] AudioClip spawnedEnemySFX;
 
     private int spawnedEnemies = 0;
 
@@ -22,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
 
         while (true){
             Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            GetComponent<AudioSource>().PlayOneShot(spawnedEnemySFX);
             spawnedEnemies ++;
             scoreText.text = spawnedEnemies.ToString();
             yield return new WaitForSeconds(secondsBetweenSpawns);

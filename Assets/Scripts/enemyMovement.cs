@@ -22,7 +22,7 @@ public class enemyMovement : MonoBehaviour
         foreach (Waypoint waypoint in path){
 
             transform.position = waypoint.transform.position;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.7f);
 
         }
         

@@ -11,6 +11,7 @@ public class FriendlyBase : MonoBehaviour
     [SerializeField] int health = 10;
     [SerializeField] int healthDecrease = 1;
     [SerializeField] Text healthTxt;
+    [SerializeField] AudioClip reachedBaseSFX;
 
     void Start(){
 
@@ -21,6 +22,7 @@ public class FriendlyBase : MonoBehaviour
     void OnTriggerEnter(Collider collider){
 
         health -= healthDecrease;
+        GetComponent<AudioSource>().PlayOneShot(reachedBaseSFX);
         healthTxt.text = health.ToString();
 
     }

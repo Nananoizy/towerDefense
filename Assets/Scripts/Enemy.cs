@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject enemyDeathFX;
     [SerializeField] int hits = 20;
 
+    [SerializeField] AudioClip damagedEnemySFX;
+
     void Start()
     {
     }
@@ -14,6 +16,8 @@ public class Enemy : MonoBehaviour
     void OnParticleCollision(GameObject other){
         
         hits--;
+
+        GetComponent<AudioSource>().PlayOneShot(damagedEnemySFX);
 
         if (hits <= 0){
             KillEnemy();
