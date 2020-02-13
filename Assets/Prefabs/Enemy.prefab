@@ -4804,6 +4804,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16bf1ce577205d419778090cc778012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyDeathFX: {fileID: 21228331641731477, guid: 312e8722ce5e96e4eac7c4606ab3c9b0,
+    type: 3}
 --- !u!114 &-8564352239101256522
 MonoBehaviour:
   m_ObjectHideFlags: 0

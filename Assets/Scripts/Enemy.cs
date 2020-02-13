@@ -7,8 +7,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject enemyDeathFX;
     [SerializeField] int hits = 20;
 
-
-
     void Start()
     {
     }
@@ -25,6 +23,11 @@ public class Enemy : MonoBehaviour
     void KillEnemy(){
 
         Instantiate(enemyDeathFX, transform.position, Quaternion.identity);
+
+        float destroyDelay = enemyDeathFX.GetComponent<ParticleSystem>().main.duration;
+
+        Destroy(enemyDeathFX, destroyDelay);
+
         Destroy(gameObject);
 
     }
