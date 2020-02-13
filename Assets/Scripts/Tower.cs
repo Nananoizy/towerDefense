@@ -35,7 +35,6 @@ public class Tower : MonoBehaviour
 
             float distanceToEnemy = Vector3.Distance(targetEnemy.transform.position, this.transform.position);
 
-            print("Mi distancia con la torre es: " + distanceToEnemy);
             if (distanceToEnemy <= shootingDistance){
                 Shoot(true);
             }
