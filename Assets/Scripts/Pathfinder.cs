@@ -110,11 +110,16 @@ public class Pathfinder : MonoBehaviour
     }
 
     public List<Waypoint> GetPath(){
-        LoadBlocks();
-        BreadthFirstSearch();
-        ColorStartAndEnd();
-        FormPath();
+
+        if (path.Count == 0){
+
+            LoadBlocks();
+            BreadthFirstSearch();
+            ColorStartAndEnd();
+            FormPath();
+        }
 
         return path;
+        
     }
 }
